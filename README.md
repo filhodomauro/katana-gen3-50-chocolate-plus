@@ -26,8 +26,8 @@ Os comandos foram validados **somente** nessa combinação. Outros modelos da li
 
 1. Baixe o app **CubeSuite** (versão 3.0.9).
 2. Conecte ao dispositivo **Chocolate Plus** (que aparece como **FootCtrlPlus**).
-3. Baixe o export [`cube-suite-kat3-50-scene-1.fcp`](exports/cube-suite-kat3-50-scene-1.fcp). Antes de importar para o CubeSuite, é recomendado fazer o export das configurações atuais.
-4. Importe o export baixado.
+3. Baixe o arquivo [`cube-suite-kat3-50-scene-1.fcp`](exports/cube-suite-kat3-50-scene-1.fcp) e transfira-o para o iPhone (por exemplo, por AirDrop). Antes de importá-lo, é recomendado **exportar, pelo app CubeSuite**, as configurações que estão atualmente no pedal, para ter um backup.
+4. **No app CubeSuite**, importe o arquivo baixado. O export (passo 3) e o import (passo 4) são sempre feitos pelo CubeSuite, com o Chocolate Plus conectado.
 5. Com o BT-DUAL conectado no Katana, aproxime o Chocolate do Katana e faça o pareamento entre eles. Garanta que nenhum outro dispositivo esteja conectado ao BT-DUAL.
 6. Com isso o Chocolate já deve conseguir enviar os comandos.
 
