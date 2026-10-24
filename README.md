@@ -7,7 +7,7 @@ Configuração entre o amplificador **Boss Katana Gen 3 50 W** e o pedal control
 Reunir em um só lugar o que é necessário para controlar o Katana a partir do Chocolate Plus:
 
 - a lista de comandos MIDI (SysEx) que o amplificador entende: [`commands.md`](commands.md);
-- arquivos de exportação (`.fcp`) do FootCtrlPlus prontos para importar no pedal;
+- arquivos de exportação (`.fcp`) do CubeSuite prontos para importar no pedal;
 - uma explicação de como esses comandos são enviados.
 
 ## Equipamentos e versões
@@ -17,7 +17,7 @@ Reunir em um só lugar o que é necessário para controlar o Katana a partir do 
 | Boss Katana Gen 3 50 W | amplificador, modelo KATANA-50 Gen 3 | System Program Ver.1.06 |
 | Boss BT-DUAL | adaptador Bluetooth de áudio e MIDI, instalado na porta USB do amplificador | firmware: _a preencher_ |
 | M-VAVE Chocolate Plus | pedal controlador MIDI com 4 footswitches | firmware: _a preencher_ |
-| FootCtrlPlus | aplicativo de configuração do Chocolate Plus (macOS) | versão: _a preencher_ |
+| CubeSuite (Sinco Audio) | aplicativo de configuração do Chocolate Plus (iOS, App Store) | 3.0.9 |
 | Boss Tone Studio for Katana Gen 3 | editor do amplificador, usado como referência dos nomes dos efeitos | Ver.1.1.0 (Build 26) |
 
 Os comandos foram validados **somente** nessa combinação. Outros modelos da linha Katana (100 W, Head, Artist, EX) e as gerações anteriores (Mk I e Mk II) podem usar outro layout de presets, outros endereços ou outro ID de modelo, e não foram testados.
@@ -71,11 +71,11 @@ A troca de preset só é aceita depois que o **modo de edição** é ligado, o q
 
 ### Configuração no pedal
 
-No FootCtrlPlus, cada mensagem é cadastrada como **SysEx**, em hexadecimal com espaços, **incluindo `F0` e `F7` e o checksum**. Um mesmo botão aceita várias mensagens em sequência, o que permite enviar o modo de edição e a troca de preset com um único toque. Para alternar um efeito entre ligado e desligado em um botão, use o modo de dois bancos: o banco A liga e o banco B desliga.
+No CubeSuite, cada mensagem é cadastrada como **SysEx**, em hexadecimal com espaços, **incluindo `F0` e `F7` e o checksum**. Um mesmo botão aceita várias mensagens em sequência, o que permite enviar o modo de edição e a troca de preset com um único toque. Para alternar um efeito entre ligado e desligado em um botão, use o modo de dois bancos: o banco A liga e o banco B desliga.
 
 ## Arquivos de exportação
 
-Os arquivos ficam na pasta [`exports/`](exports/). Para usar um deles, abra o FootCtrlPlus com o Chocolate Plus conectado, clique em **Import** e selecione o arquivo.
+Os arquivos ficam na pasta [`exports/`](exports/). Para usar um deles, envie o arquivo para o iPhone (por exemplo, por AirDrop) e importe-o no CubeSuite com o Chocolate Plus conectado.
 
 ### Cena 1: `cube-suite-kat3-50-scene-1.fcp`
 
@@ -88,8 +88,8 @@ Configuração com **4 grupos**, cada um com os 4 footswitches (A, B, C e D) do 
 | 3 | Efeitos | Solo | FX | EQ | Delay 2 |
 | 4 | Efeitos | NS | Variation | Pedal FX | EQ2 |
 
-- **Grupo 1 (presets):** cada botão está no modo "Single step (single Bank information)" e envia duas mensagens em sequência: o modo de edição e a troca de preset.
-- **Grupos 2 a 4 (efeitos):** cada botão está no modo "Single step (switch between two Banks)". O banco A liga o efeito e o banco B desliga, então cada toque alterna o estado.
+- **Grupo 1 (presets):** cada botão está no modo "Single step (single bank of information)" e envia duas mensagens em sequência: o modo de edição e a troca de preset.
+- **Grupos 2 a 4 (efeitos):** cada botão está no modo "Single step (switch between 2 banks)". O banco A liga o efeito e o banco B desliga, então cada toque alterna o estado.
 - O pedal não lê o estado do amplificador. Se um efeito for alterado pelo painel, ou se o preset mudar, o toggle do pedal pode ficar fora de sincronia (veja a nota em [`commands.md`](commands.md#efeitos)).
 - O número máximo de grupos está configurado em 4.
 
@@ -97,7 +97,7 @@ Testada no Katana System Program Ver.1.06 (veja a tabela de equipamentos).
 
 ## TODO
 
-- [ ] Preencher as versões de firmware do BT-DUAL e do Chocolate Plus e a versão do FootCtrlPlus.
+- [ ] Preencher as versões de firmware do BT-DUAL e do Chocolate Plus.
 - [ ] Validar os comandos também no Katana System Program Ver.1.07 e, se funcionarem, documentar as duas versões.
 - [ ] Mapear os comandos dos blocos ainda não documentados: Send/Return, Contour e Global EQ.
 - [ ] Adicionar outras cenas de exportação (`.fcp`), caso existam.

@@ -1,6 +1,6 @@
 # Comandos SysEx
 
-Todos os comandos estão em hexadecimal, no formato aceito pelo FootCtrlPlus (com `F0`, `F7` e o checksum já calculado). O formato e o cálculo do checksum estão no [README](README.md#como-os-comandos-são-enviados).
+Todos os comandos estão em hexadecimal, no formato aceito pelo CubeSuite (com `F0`, `F7` e o checksum já calculado). O formato e o cálculo do checksum estão no [README](README.md#como-os-comandos-são-enviados).
 
 - [Presets](#presets)
 - [Efeitos](#efeitos)
@@ -56,7 +56,7 @@ F0 41 10 01 05 07 12 7F 00 01 00 00 06 7A F7
 
 Os comandos de efeito **não** exigem o modo de edição: cada um é uma única mensagem. Eles atuam no **preset selecionado no momento**, e cada preset guarda o seu próprio estado de efeitos.
 
-Para um botão de toggle, use o modo "Single step (switch between two Banks)" do FootCtrlPlus: cadastre o comando de **ligar** no banco A e o de **desligar** no banco B.
+Para um botão de toggle, use o modo "Single step (switch between 2 banks)" do CubeSuite: cadastre o comando de **ligar** no banco A e o de **desligar** no banco B.
 
 > Cada comando liga ou desliga o **bloco** de efeito, e não um efeito específico. O que é ativado é o tipo que o preset tiver selecionado naquele bloco (por exemplo, o bloco Mod pode estar com Chorus em um preset e com outro efeito em outro). Compressor e Pitch Shifter, por exemplo, são tipos escolhidos dentro dos blocos Mod e FX, e não têm comando próprio. A escolha do tipo é feita no preset, pelo Boss Tone Studio.
 
