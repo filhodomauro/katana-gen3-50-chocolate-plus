@@ -15,12 +15,30 @@ Reunir em um só lugar o que é necessário para controlar o Katana a partir do 
 | Equipamento | Detalhe | Versão |
 |---|---|---|
 | Boss Katana Gen 3 50 W | amplificador, modelo KATANA-50 Gen 3 | System Program Ver.1.06 |
-| Boss BT-DUAL | adaptador Bluetooth de áudio e MIDI, instalado na porta USB do amplificador | firmware: _a preencher_ |
-| M-VAVE Chocolate Plus | pedal controlador MIDI com 4 footswitches | firmware: _a preencher_ |
+| Boss BT-DUAL | adaptador Bluetooth de áudio e MIDI, instalado na porta USB do amplificador | sem atualização de firmware listada na página de suporte da Boss |
+| M-VAVE Chocolate Plus | pedal controlador MIDI com 4 footswitches (identifica-se como "FootCtrlPlus") | firmware 16 (lido pelo app SincoOTA 1.0.13) |
 | CubeSuite (Sinco Audio) | aplicativo de configuração do Chocolate Plus (iOS, App Store) | 3.0.9 |
 | Boss Tone Studio for Katana Gen 3 | editor do amplificador, usado como referência dos nomes dos efeitos | Ver.1.1.0 (Build 26) |
 
 Os comandos foram validados **somente** nessa combinação. Outros modelos da linha Katana (100 W, Head, Artist, EX) e as gerações anteriores (Mk I e Mk II) podem usar outro layout de presets, outros endereços ou outro ID de modelo, e não foram testados.
+
+## Quick Start
+
+1. Baixe o app **CubeSuite** (versão 3.0.9).
+2. Conecte ao dispositivo **Chocolate Plus** (que aparece como **FootCtrlPlus**).
+3. Baixe o export [`cube-suite-kat3-50-scene-1.fcp`](exports/cube-suite-kat3-50-scene-1.fcp). Antes de importar para o CubeSuite, é recomendado fazer o export das configurações atuais.
+4. Importe o export baixado.
+5. Com o BT-DUAL conectado no Katana, aproxime o Chocolate do Katana e faça o pareamento entre eles. Garanta que nenhum outro dispositivo esteja conectado ao BT-DUAL.
+6. Com isso o Chocolate já deve conseguir enviar os comandos.
+
+> **Dica:** o arquivo com a cena 1 tem 4 grupos de configurações para o Chocolate, conforme a tabela abaixo. Para navegar entre os grupos (de 1 a 4), pressione simultaneamente os footswitches **C + D** para subir e **A + B** para descer.
+>
+> | Grupo | Função | A | B | C | D |
+> |---|---|---|---|---|---|
+> | 1 | Presets | A: CH-1 | B: CH-1 | A: CH-2 | B: CH-2 |
+> | 2 | Efeitos | Booster | Mod | Delay 1 | Reverb |
+> | 3 | Efeitos | Solo | FX | EQ | Delay 2 |
+> | 4 | Efeitos | NS | Variation | Pedal FX | EQ2 |
 
 ## Como os comandos são enviados
 
@@ -97,7 +115,6 @@ Testada no Katana System Program Ver.1.06 (veja a tabela de equipamentos).
 
 ## TODO
 
-- [ ] Preencher as versões de firmware do BT-DUAL e do Chocolate Plus.
 - [ ] Validar os comandos também no Katana System Program Ver.1.07 e, se funcionarem, documentar as duas versões.
 - [ ] Mapear os comandos dos blocos ainda não documentados: Send/Return, Contour e Global EQ.
 - [ ] Adicionar outras cenas de exportação (`.fcp`), caso existam.
