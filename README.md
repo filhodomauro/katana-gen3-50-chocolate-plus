@@ -14,7 +14,7 @@ Reunir em um só lugar o que é necessário para controlar o Katana a partir do 
 
 | Equipamento | Detalhe | Versão |
 |---|---|---|
-| Boss Katana Gen 3 50 W | amplificador, modelo KATANA-50 Gen 3 | firmware: _a preencher_ |
+| Boss Katana Gen 3 50 W | amplificador, modelo KATANA-50 Gen 3 | System Program Ver.1.06 |
 | Boss BT-DUAL | adaptador Bluetooth de áudio e MIDI, instalado na porta USB do amplificador | firmware: _a preencher_ |
 | M-VAVE Chocolate Plus | pedal controlador MIDI com 4 footswitches | firmware: _a preencher_ |
 | FootCtrlPlus | aplicativo de configuração do Chocolate Plus (macOS) | versão: _a preencher_ |
@@ -75,13 +75,32 @@ No FootCtrlPlus, cada mensagem é cadastrada como **SysEx**, em hexadecimal com 
 
 ## Arquivos de exportação
 
-_Em breve._
+Os arquivos ficam na pasta [`exports/`](exports/). Para usar um deles, abra o FootCtrlPlus com o Chocolate Plus conectado, clique em **Import** e selecione o arquivo.
+
+### Cena 1: `cube-suite-kat3-50-scene-1.fcp`
+
+Configuração com **4 grupos**, cada um com os 4 footswitches (A, B, C e D) do Chocolate Plus. Todas as mensagens são SysEx e estão listadas em [`commands.md`](commands.md).
+
+| Grupo | Função | A | B | C | D |
+|---|---|---|---|---|---|
+| 1 | Presets | A: CH-1 | B: CH-1 | A: CH-2 | B: CH-2 |
+| 2 | Efeitos | Booster | Mod | Delay 1 | Reverb |
+| 3 | Efeitos | Solo | FX | EQ | Delay 2 |
+| 4 | Efeitos | NS | Variation | Pedal FX | EQ2 |
+
+- **Grupo 1 (presets):** cada botão está no modo "Single step (single Bank information)" e envia duas mensagens em sequência: o modo de edição e a troca de preset.
+- **Grupos 2 a 4 (efeitos):** cada botão está no modo "Single step (switch between two Banks)". O banco A liga o efeito e o banco B desliga, então cada toque alterna o estado.
+- O pedal não lê o estado do amplificador. Se um efeito for alterado pelo painel, ou se o preset mudar, o toggle do pedal pode ficar fora de sincronia (veja a nota em [`commands.md`](commands.md#efeitos)).
+- O número máximo de grupos está configurado em 4.
+
+Testada no Katana System Program Ver.1.06 (veja a tabela de equipamentos).
 
 ## TODO
 
-- [ ] Preencher as versões de firmware (Katana, BT-DUAL e Chocolate Plus) e a versão do FootCtrlPlus.
-- [ ] Mapear os comandos dos blocos ainda não documentados: Pedal FX, NS (noise suppressor), Send/Return, Solo, Contour, Variation e Global EQ.
-- [ ] Adicionar os arquivos de exportação (`.fcp`) do FootCtrlPlus.
+- [ ] Preencher as versões de firmware do BT-DUAL e do Chocolate Plus e a versão do FootCtrlPlus.
+- [ ] Validar os comandos também no Katana System Program Ver.1.07 e, se funcionarem, documentar as duas versões.
+- [ ] Mapear os comandos dos blocos ainda não documentados: Send/Return, Contour e Global EQ.
+- [ ] Adicionar outras cenas de exportação (`.fcp`), caso existam.
 
 ## Aviso
 

@@ -58,6 +58,8 @@ Os comandos de efeito **não** exigem o modo de edição: cada um é uma única 
 
 Para um botão de toggle, use o modo "Single step (switch between two Banks)" do FootCtrlPlus: cadastre o comando de **ligar** no banco A e o de **desligar** no banco B.
 
+> Cada comando liga ou desliga o **bloco** de efeito, e não um efeito específico. O que é ativado é o tipo que o preset tiver selecionado naquele bloco (por exemplo, o bloco Mod pode estar com Chorus em um preset e com outro efeito em outro). Compressor e Pitch Shifter, por exemplo, são tipos escolhidos dentro dos blocos Mod e FX, e não têm comando próprio. A escolha do tipo é feita no preset, pelo Boss Tone Studio.
+
 > O pedal não lê o estado do amplificador. Se o efeito for alterado pelo painel ou se o preset mudar, o toggle do pedal pode ficar fora de sincronia e o primeiro toque seguinte não terá efeito visível.
 
 ### Booster
@@ -142,6 +144,62 @@ Desligar:
 
 ```
 F0 41 10 01 05 07 12 20 00 08 05 00 53 F7
+```
+
+### Solo
+
+Ligar:
+
+```
+F0 41 10 01 05 07 12 20 00 3A 00 01 25 F7
+```
+
+Desligar:
+
+```
+F0 41 10 01 05 07 12 20 00 3A 00 00 26 F7
+```
+
+### NS (Noise Suppressor)
+
+Ligar:
+
+```
+F0 41 10 01 05 07 12 20 00 58 00 01 07 F7
+```
+
+Desligar:
+
+```
+F0 41 10 01 05 07 12 20 00 58 00 00 08 F7
+```
+
+### Variation
+
+Ligar:
+
+```
+F0 41 10 01 05 07 12 20 00 06 09 01 50 F7
+```
+
+Desligar:
+
+```
+F0 41 10 01 05 07 12 20 00 06 09 00 51 F7
+```
+
+### Pedal FX
+
+Ligar:
+
+```
+F0 41 10 01 05 07 12 20 00 48 01 01 16 F7
+```
+
+Desligar:
+
+```
+F0 41 10 01 05 07 12 20 00 48 01 00 17 F7
 ```
 
 ### EQ
